@@ -59,7 +59,7 @@ doEvent.sdm = function(sim, eventTime, eventType) {
     eventType,
     init = {
       sim <- Init(sim)
-      sim <- scheduleEvent(sim, 1, "sdm", "burn") # How to say "first year"?
+      sim <- scheduleEvent(sim, 1, "sdm", "burn", 2.5) # How to say "first year"?
     },
 
     burn = {
