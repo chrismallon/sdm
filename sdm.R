@@ -75,6 +75,8 @@ doEvent.sdm = function(sim, eventTime, eventType) {
 
 Init <- function(sim) {
   sim$fireSizes <- list()
+  sim$rstCurrentBurn <- raster(sim$fireReturnInterval) ## creates no-value raster
+  sim$rstCurrentBurn[] <- 0L
   return(invisible(sim))
 }
 
