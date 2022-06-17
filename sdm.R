@@ -83,7 +83,10 @@ Init <- function(sim) {
 }
 
 burn <- function(sim) {
-  sim$rstCurrentBurn <- load_disturbance_raster(P(sim)$disturbance_directory, P(sim)$base_file_name, time(sim))
+  sim$rstCurrentBurn <- load_disturbance_raster(P(sim)$disturbance_directory,
+                                                P(sim)$base_file_name,
+                                                time(sim),
+                                                P(sim)$file_name_end)
   sim$rstCurrentBurnCumulative <- sim$rstCurrentBurnCumulative + sim$rstCurrentBurn
   sim$fireSizes <- add_list_of_fire_sizes(sim$fireSizes, sim$rstCurrentBurn)
   return(invisible(sim))
